@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import DevTools from 'mobx-react-devtools'
 import {inject, observer} from 'mobx-react'
-import './App.css';
 import AppBarComponent from './AppBarComponent'
 import ProductDisplay from './ProductDisplay'
 import CartDisplay from './CartDisplay'
+import './App.css';
 
 
-
-class App extends Component {
+const App = inject('cart')(observer (class App extends Component {
   render() {
     return (
       <div className="app">
         <AppBarComponent/>
-        <CartDisplay/>
+        {this.props.cart.cartIsOpen ? <CartDisplay/> : null}
         <ProductDisplay/>
         <DevTools/>
       </div>
     );
   }
-}
+}))
 
 export default App;
