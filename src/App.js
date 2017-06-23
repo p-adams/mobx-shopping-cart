@@ -11,7 +11,7 @@ import CartDisplay from './CartDisplay'
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <AppBarComponent/>
         <CartDisplay/>
         <ProductDisplay/>
@@ -19,10 +19,6 @@ class App extends Component {
       </div>
     );
   }
-}
-
-const Main = () => {
-  
 }
 
 export default App;
