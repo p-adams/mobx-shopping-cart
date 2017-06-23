@@ -3,11 +3,11 @@ import {computed, extendObservable} from 'mobx'
 class CartStore {
     constructor() {
         extendObservable(this, {
-            items: [
-                {id: 1, item: "REAL ISHOD WAIR"}
+            itemsInCart: [
+                {id: 1, item: "REAL ISHOD WAIR", quantity: 1, price: 49.00}
             ],
-            getItems: computed(() => {
-                return this.items
+            getItemsInCart: computed(() => {
+                return this.itemsInCart
             })
         })
     }

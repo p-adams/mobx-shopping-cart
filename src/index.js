@@ -8,6 +8,12 @@ import './index.css';
 
 const store = new Store()
 const cartStore = store.cartStore
+const inventoryStore = store.inventoryStore
 
-ReactDOM.render(<Provider cartStore={cartStore}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider
+                    cart={cartStore}
+                    inventory={inventoryStore}
+                >
+                    <App/>
+                </Provider>, document.getElementById('root'));
 registerServiceWorker();
