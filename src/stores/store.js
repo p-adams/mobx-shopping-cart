@@ -1,17 +1,12 @@
-import {computed, extendObservable} from 'mobx'
+import {extendObservable} from 'mobx'
+import CartStore from './CartStore'
 
-class CartStore {
+class AppState {
     constructor() {
         extendObservable(this, {
-            items: [
-                {id: 1, item: "REAL ISHOD WAIR"}
-            ],
-            getItems: computed(() => {
-                return this.items
-            })
+           cartStore: new CartStore()
         })
     }
 }
 
-const store = new CartStore()
-export default store
+export default AppState
