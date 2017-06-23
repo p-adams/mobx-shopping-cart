@@ -12,7 +12,7 @@ const App = inject('cart')(observer (class App extends Component {
     return (
       <div className="app">
         <AppBarComponent/>
-        {this.props.cart.cartIsOpen ? <CartDisplay/> : null}
+        <CartDisplay/>
         <ProductDisplay/>
         <DevTools/>
       </div>
