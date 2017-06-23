@@ -22,7 +22,7 @@ class InventoryStore {
                 return this.inventory
             }),
             addNewItem: action((item, quantity, price) => {
-                this.inventory.push(new Item(id++, item, quantity, price))
+                this.inventory.push(new Item(this.id++, item, quantity, price))
             })
         })
     }
