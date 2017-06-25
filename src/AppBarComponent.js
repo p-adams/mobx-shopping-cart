@@ -15,7 +15,7 @@ const AppBarComponent = inject("cart")(observer(({cart}) => {
         iconElementRight={  <div style={{marginRight: '250px'}}>
                             <Badge
                                 badgeContent={cart.getNumItemsInCart}
-                                badgeStyle={{background: 'pink'}}
+                                badgeStyle={{background: '#EC407A', color: 'white'}}
                                 primary={true}
                             >
                             <ShoppingCart/>
