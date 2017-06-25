@@ -1,2 +1,2 @@
-# mobx-shopping-cart
-Shopping cart app built with React and MobX
+# souk
+An e-commerce app built with React and MobX
