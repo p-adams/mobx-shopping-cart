@@ -18,7 +18,12 @@ const CartDisplay = inject("cart")(observer (({cart}) => {
                     {cart.getItemsInCart.map((item, index) => {
                         return (
                             <Card style={itemStyle} key={index}>
-                                <CardHeader titleColor="black" title={item.item}/>
+                                <CardText style={{color: "black"}}>
+                                        <p>item: {item.item}</p>
+                                        <p>quantity: {item.quantity}</p>
+                                        <p>price: {item.price}</p>
+                                        <button>remove</button>
+                                </CardText>
                             </Card>
                         )
                     })}
