@@ -14,6 +14,13 @@ const CartDisplay = inject("cart")(observer (({cart}) => {
             <Drawer
                 open={cart.isCartOpen}
                 openSecondary={true}>
+                 <div style={{
+                        color: 'white',
+                        marginTop: '50px',
+                        marginLeft: '25px'
+                        }}>
+                         <h4>Total: ${cart.calcTotal}</h4><hr/>
+                </div>
                 <MenuItem>
                     {cart.getItemsInCart.map((item, index) => {
                         return (

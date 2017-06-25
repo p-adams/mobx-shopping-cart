@@ -19,8 +19,8 @@ class CartStore {
             showTotal: computed(() => {
                 return this.total
             }),
-            calcTotal: action(() => {
-                
+            calcTotal: computed(() => {
+                return this.itemsInCart.reduce((total, item) => total + (item.quantity * item.price), 0)
             }),
             showCart: action(() => {
                 this.isCartOpen = !this.isCartOpen
