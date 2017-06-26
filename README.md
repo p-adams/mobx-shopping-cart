@@ -9,5 +9,5 @@ An e-commerce app built with React and MobX
 
 ### start application:
 
-`cd souk`
+`cd souk`<br>
 `yarn start`
