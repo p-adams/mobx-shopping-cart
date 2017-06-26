@@ -37,6 +37,7 @@ const CartDisplay = inject("cart")(observer (({cart}) => {
                                                 <span>
                                                     <input
                                                         type="number"
+                                                        min={0}
                                                         value={item.quantity}
                                                         onChange={ e => cart.updateQuantity(item.id, e.target.value)}
                                                         style={{marginLeft: '10px', width: '30px', height: '20px', borderRadius: '5px'}}
@@ -45,7 +46,7 @@ const CartDisplay = inject("cart")(observer (({cart}) => {
                                             </p>
                                             <p style={{marginTop: '-40px'}}>Price: ${item.price}</p>
                                             <FloatingActionButton>
-                                                <ContentRemove />
+                                                <ContentRemove onClick={() => cart.removeItemFromCart(item.id)}/>
                                             </FloatingActionButton>
                                     </CardText>
                                 </Card>

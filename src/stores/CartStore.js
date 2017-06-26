@@ -24,6 +24,14 @@ class CartStore {
             }),
             showCart: action(() => {
                 this.isCartOpen = !this.isCartOpen
+            }),
+            updateQuantity: action((id, quantity) => {
+                this.itemsInCart.forEach(item => id === item.id ? item.quantity = quantity : null)
+            }),
+            removeItemFromCart: action(id => {
+                for(let i = 0; i < this.itemsInCart.length; i++) {
+                    if(this.itemsInCart[i].id === id) this.itemsInCart.splice(i, 1)
+                }
             })
         })
     }

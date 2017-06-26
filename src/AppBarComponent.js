@@ -8,10 +8,11 @@ import IconButton from 'material-ui/IconButton'
 
 const AppBarComponent = inject("cart")(observer(({cart}) => {
     const style = {
+        fontSize: '40px',
         color: 'white'
     }
     return (
-        <AppBar title={<span style={style}>MobX Shopping Cart</span>}
+        <AppBar title={<span style={style}>souk</span>}
         iconElementRight={  <div style={{marginRight: '250px'}}>
                             <Badge
                                 badgeContent={cart.getNumItemsInCart}
