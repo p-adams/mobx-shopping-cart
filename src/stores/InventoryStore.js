@@ -17,7 +17,18 @@ class InventoryStore {
     constructor() {
         extendObservable(this, {
             id: 2,
-            inventory: [new Item(1, "Nike Air Max", 4, 109.99)],
+            inventory: [
+                new Item(1, "Nike Air Max", 4, 109.99),
+                new Item(1, "Nike Air Max", 4, 109.99),
+                new Item(1, "Nike Air Max", 4, 109.99),
+                new Item(1, "Nike Air Max", 4, 109.99),
+                new Item(1, "Nike Air Max", 4, 109.99),
+                new Item(1, "Nike Air Max", 4, 109.99),
+                new Item(1, "Nike Air Max", 4, 109.99),
+                new Item(1, "Nike Air Max", 4, 109.99),
+                new Item(1, "Nike Air Max", 4, 109.99),
+                
+                ],
             getInventory: computed(() => {
                 return this.inventory
             }),

@@ -31,7 +31,7 @@ const CartDisplay = inject("cart")(observer (({cart}) => {
                         {cart.getItemsInCart.map((item, index) => {
                             return (
                                 <Card style={itemStyle} key={index}>
-                                    <CardText style={{color: "black"}}>
+                                    <CardText style={{color: "#455A64"}}>
                                             <p style={{marginTop: '-20px'}}>Item: {item.item}</p>
                                             <p style={{marginTop: '-40px'}}>Quantity:
                                                 <span>
@@ -45,7 +45,7 @@ const CartDisplay = inject("cart")(observer (({cart}) => {
                                                 </span>
                                             </p>
                                             <p style={{marginTop: '-40px'}}>Price: ${item.price}</p>
-                                            <FloatingActionButton>
+                                            <FloatingActionButton secondary={true}>
                                                 <ContentRemove onClick={() => cart.removeItemFromCart(item.id)}/>
                                             </FloatingActionButton>
                                     </CardText>
