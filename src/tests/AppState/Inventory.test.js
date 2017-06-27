@@ -12,3 +12,4 @@ it('third item in inventory should have id of 3', () => {
     inventoryStore.addNewItem("X BOX ONE", 5, 250.00)
     expect(inventoryStore.inventory[2].id).toEqual(3)
 })
+

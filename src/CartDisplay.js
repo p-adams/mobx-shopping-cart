@@ -16,18 +16,18 @@ const CartDisplay = inject("cart")(observer (({cart}) => {
         }
         return (
             <div>
-                {cart.getNumItemsInCart === 0 ? "Empty" : 
                 <Drawer
                     open={cart.isCartOpen}
                     openSecondary={true}>
-                    <div style={{
+                    {cart.getNumItemsInCart === 0 ? <p style={{margin: '25px'}}>Cart is empty</p> : 
+                    <MenuItem>
+                        <div style={{
                             color: 'white',
                             marginTop: '50px',
                             marginLeft: '25px'
                             }}>
                             <h4>Total: ${cart.calcTotal}</h4>
-                    </div>
-                    <MenuItem>
+                        </div>
                         {cart.getItemsInCart.map((item, index) => {
                             return (
                                 <Card style={itemStyle} key={index}>
@@ -44,6 +44,7 @@ const CartDisplay = inject("cart")(observer (({cart}) => {
                                                         />
                                                 </span>
                                             </p>
+                                            <p>Sold by: </p>
                                             <p style={{marginTop: '-40px'}}>Price: ${item.price}</p>
                                             <FloatingActionButton secondary={true}>
                                                 <ContentRemove onClick={() => cart.removeItemFromCart(item.id)}/>
@@ -52,9 +53,8 @@ const CartDisplay = inject("cart")(observer (({cart}) => {
                                 </Card>
                             )
                         })}
-                    </MenuItem>
+                    </MenuItem>}
                 </Drawer>
-                }
             </div>
         )
     

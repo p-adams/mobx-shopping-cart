@@ -19,7 +19,7 @@ const AppBarComponent = inject("cart")(observer(({cart}) => {
                                 badgeStyle={{background: '#EC407A', color: 'white'}}
                                 primary={true}
                             >
-                            <ShoppingCart/>
+                                <ShoppingCart/>
                             </Badge>
                             <RaisedButton
                                 onClick={() => cart.showCart()}
