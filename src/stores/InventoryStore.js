@@ -19,8 +19,10 @@ class InventoryStore {
         extendObservable(this, {
             id: 2,
             isSeller: false,
+            outOfStock: false,
             item: '',
             quantity: 1,
+            purchaseQuantity: 0,
             price: '',
             seller: '',
             inventory: [
@@ -28,6 +30,9 @@ class InventoryStore {
             ],
             getInventory: computed(() => {
                 return this.inventory
+            }),
+            updateQuantity: computed(() => {
+                this.itemsInCart.forEach(item => id === item.id ? item.quantity = quantity : null)
             }),
             // method for testing store
             addNewItem: action((item, quantity, price) => {
@@ -51,6 +56,9 @@ class InventoryStore {
             }),
             getSeller: action(seller => {
                 this.seller = seller
+            }),
+            getPurchaseQuantity: action(quantity => {
+                this.purchaseQuantity = quantity
             })
         })
     }

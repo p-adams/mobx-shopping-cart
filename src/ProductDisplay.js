@@ -4,10 +4,19 @@ import SellerNav from './SellerNav'
 import {Card, CardHeader, CardText} from 'material-ui/Card'
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import AddToCart from 'material-ui/svg-icons/action/add-shopping-cart';
+import TextField from 'material-ui/TextField'
 
 
-const ProductDisplay = inject("inventory")(observer (class ProductDisplay extends Component {
+const ProductDisplay = inject("inventory", "cart")(observer (class ProductDisplay extends Component {
+    constructor() {
+        super()
+        this.getQuantity = this.getQuantity.bind(this)
+    }
+    getQuantity(e) {
+        this.props.inventory.getPurchaseQuantity(e.target.value)
+    }
     render() {
+        let quantity = this.props.inventory.purchaseQuantity
         let cartStyle = {
             padding: '20px',
             background: '#303030',
@@ -30,11 +39,18 @@ const ProductDisplay = inject("inventory")(observer (class ProductDisplay extend
                                >
                                <div style={{padding: '25px'}}>
                                 <p style={pStyle}>Item: {item.item}</p>
-                                <p style={pStyle}>{item.quantity} left!</p>
-                                <p style={pStyle}>${item.price}</p>
+                                <p style={pStyle}>Quantity: {item.quantity} left!</p>
+                                <TextField
+                                    id="quantity"
+                                    type="number"
+                                    value={quantity}
+                                    onChange={this.getQuantity}
+                                    style={{width: '50px', marginBottom: '15px'}}
+                                />
+                                <p style={pStyle}>Price: ${item.price}</p>
                                 <p style={pStyle}>Sold by: <a href="#">{item.seller}</a></p>
-                                    <FloatingActionButton>
-                                        <AddToCart/>
+                                    <FloatingActionButton disabled={true}>
+                                        <AddToCart onClick={() => this.props.cart.addItemToCart(item)}/>
                                     </FloatingActionButton>
                                 </div>
                                </CardText>

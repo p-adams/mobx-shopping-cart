@@ -28,6 +28,14 @@ class CartStore {
             updateQuantity: action((id, quantity) => {
                 this.itemsInCart.forEach(item => id === item.id ? item.quantity = quantity : null)
             }),
+            addItemToCart: action(item => {
+                this.itemsInCart.push({
+                    id: item.id,
+                    item: item.item,
+                    quantity: item.quantity,
+                    seller: item.seller
+                })
+            }),
             removeItemFromCart: action(id => {
                 for(let i = 0; i < this.itemsInCart.length; i++) {
                     if(this.itemsInCart[i].id === id) this.itemsInCart.splice(i, 1)
