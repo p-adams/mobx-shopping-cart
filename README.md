@@ -11,3 +11,7 @@ An e-commerce app built with React and MobX
 
 `cd souk`<br>
 `yarn start`
+
+#### todo:
+
+add Node.js backend
