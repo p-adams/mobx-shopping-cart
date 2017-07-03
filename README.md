@@ -14,4 +14,4 @@ An e-commerce app built with React and MobX
 
 ### todo:
 
-add Node.js backend
+Integrate with backend
